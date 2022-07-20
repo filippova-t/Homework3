@@ -76,6 +76,71 @@ public class Main {
         }
 
 
+        //Задание 6
+        int age = 19;
+        int salary = 98_000;
+        if (age >= 23) {
+            if (salary >= 80_000) {
+                System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + salary * 3 * 150 / 100 + " рублей");
+            } else if (salary >= 50_000) {
+                System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + salary * 3 * 120 / 100 + " рублей");
+            } else if (salary < 50_000) {
+                System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + salary * 3 + " рублей");
+            }
+        } else if (age < 23) {
+            if (salary >= 80_000) {
+                System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + salary * 2 * 150 / 100 + " рублей");
+            } else if (salary >= 50_000) {
+                System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + salary * 2 * 120 / 100 + " рублей");
+            } else if (salary < 50_000) {
+                System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + salary * 2 + " рублей");
+            }
+        }
+
+        //Задание 7
+        age = 25;
+        salary = 60_000;
+        double wantedSum = 330_000;
+        double maxPayment = salary * 50 / 100;
+        if (age >= 30 && salary <= 80_000 && maxPayment > wantedSum * 0.1 / 12) {
+            System.out.print("Максимальный платеж при ЗП " + salary + " равен " + maxPayment + " рублей. Платеж ");
+            System.out.println("по кредиту " + wantedSum * 0.1 / 12 + " рублей." + " Одобрено");
+        } else if (age >= 30 && salary <= 80_000 && maxPayment < wantedSum * 0.1 / 12) {
+            System.out.print("Максимальный платеж при ЗП " + salary + " равен " + maxPayment + " рублей. Платеж ");
+            System.out.println("по кредиту " + (wantedSum * 0.1) / 12 + " рублей." + " Отказано");
+        } else if (age >= 30 && salary > 80_000 && maxPayment > wantedSum * (0.1 - 0.007) / 12) {
+            System.out.print("Максимальный платеж при ЗП " + salary + " равен " + maxPayment + " рублей. Платеж ");
+            System.out.println("по кредиту " + wantedSum * (0.1 - 0.007)/ 12 + " рублей." + " Одобрено");
+        } else if (age >= 30 && salary > 80_000 && maxPayment < wantedSum * (0.1 - 0.007) / 12) {
+            System.out.print("Максимальный платеж при ЗП " + salary + " равен " + maxPayment + " рублей. Платеж ");
+            System.out.println("по кредиту " + wantedSum * (0.1 - 0.007)/ 12 + " рублей." + " Отказано");
+        } else if (age < 30 && age >= 23 && salary <= 80_000 && maxPayment > wantedSum * (0.1 + 0.005) / 12) {
+            System.out.print("Максимальный платеж при ЗП " + salary + " равен " + maxPayment + " рублей. Платеж ");
+            System.out.println("по кредиту " + wantedSum * (0.1 + 0.005) / 12 + " рублей." + " Одобрено");
+        } else if (age < 30 && age >= 23 && salary <= 80_000 && maxPayment < wantedSum * (0.1 + 0.005) / 12) {
+            System.out.print("Максимальный платеж при ЗП " + salary + " равен " + maxPayment + " рублей. Платеж ");
+            System.out.println("по кредиту " + wantedSum * (0.1 + 0.005) / 12 + " рублей." + " Отказано");
+        } else if (age < 30 && age >= 23 && salary > 80_000 && maxPayment > wantedSum * (0.1 + 0.005 - 0.007) / 12) {
+            System.out.print("Максимальный платеж при ЗП " + salary + " равен " + maxPayment + " рублей. Платеж ");
+            System.out.println("по кредиту " + wantedSum * (0.1 + 0.005 - 0.007) / 12 + " рублей." + " Одобрено");
+        } else if (age < 30 && age >= 23 && salary > 80_000 && maxPayment < wantedSum * (0.1 + 0.005 - 0.007) / 12) {
+            System.out.print("Максимальный платеж при ЗП " + salary + " равен " + maxPayment + " рублей. Платеж ");
+            System.out.println("по кредиту " + wantedSum * (0.1 + 0.005 - 0.007) / 12 + " рублей." + " Отказано");
+        } else if (age < 23 && salary <= 80_000 && maxPayment > wantedSum * (0.1 + 0.01) / 12) {
+            System.out.print("Максимальный платеж при ЗП " + salary + " равен " + maxPayment + " рублей. Платеж ");
+            System.out.println("по кредиту " + wantedSum * (0.1 + 0.01) / 12 + " рублей." + " Одобрено");
+        } else if (age < 23 && salary <= 80_000 && maxPayment < wantedSum * (0.1 + 0.01) / 12) {
+            System.out.print("Максимальный платеж при ЗП " + salary + " равен " + maxPayment + " рублей. Платеж ");
+            System.out.println("по кредиту " + wantedSum * (0.1 + 0.01) / 12 + " рублей." + " Отказано");
+        } else if (age < 23 && salary > 80_000 && maxPayment > wantedSum * (0.1 + 0.01 - 0.007) / 12) {
+            System.out.print("Максимальный платеж при ЗП " + salary + " равен " + maxPayment + " рублей. Платеж ");
+            System.out.println("по кредиту " + wantedSum * (0.1 + 0.01 - 0.007) / 12 + " рублей." + " Одобрено");
+        } else if (age < 23 && salary > 80_000 && maxPayment  < wantedSum * (0.1 + 0.01 - 0.007) / 12) {
+            System.out.print("Максимальный платеж при ЗП " + salary + " равен " + maxPayment + " рублей. Платеж ");
+            System.out.println("по кредиту " + wantedSum * (0.1 + 0.01 - 0.007) / 12 + " рублей." + " Отказано");
+        }
+
+
 
 
     }
